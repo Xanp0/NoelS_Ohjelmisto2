@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tehtävä 3</title>
+</head>
+<body>
+    <h3>Lukujen yhteenlaskua</h3>
+    <p id="tulokset"></p>
+    <script>
+        'use strict';
+
+        const lukuSana = prompt('Anna eka luku: ');
+        const lukuA = parseInt(lukuSana); // String on nyt Int
+
+        // +prompt() muuntaa antaman arvon heti number-tyyppiseksi
+        const lukuB = +prompt('Anna toinen luku: ');
+        const lukuC = +prompt('Anna kolmas luku: ');
+
+        const summa = lukuA + lukuB + lukuC;
+        const ka = (summa) / 3;
+        const tulo = lukuA * lukuB * lukuC;
+
+        // käytetään muotoiltua merkkijonoa (template string) tulostusta varten
+        let tulostus =
+            `Lukujesi summa = ${summa} <br>
+            keskiarvo = ${ka} <br>
+            tulo = ${tulo}`;
+
+        document.querySelector('#tulokset').innerHTML = tulostus;
+    </script>
+
+</body>
+</html>

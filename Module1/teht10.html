@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tehtävä 10</title>
+</head>
+<body>
+    <h3>Nopan heitto prosentti?</h3>
+    <p id="tulokset"></p>
+    <script>
+        'use strict';
+
+        const diceAmount = +prompt(("Kuinka monta noppaa: "));
+        const goal = +prompt("Mitä summaa tavoittelet? ");
+
+        const maxTries = 10000;
+        let tries = 0;
+        let success = 0;
+
+        for(let i = 0; i < maxTries; i++) {
+            let summa = 0;
+            for (let nro = 0; nro < diceAmount; i++) {
+                summa += Math.floor(Math.random() * 6) + 1
+            }
+            if (summa == goal) {
+                success++;
+            }
+        }
+        const osumaPros = 100 * (success/maxTries);
+        <!--EI TOIMI-->
+        let tulostus =
+            `Probability to get sum ${goal} with ${diceAmount} ${osumaPros.toFixed(2)}`;
+        document.querySelector('#tulokset').innerHTML = tulostus;
+    </script>
+</body>
+</html>

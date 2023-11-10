@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tehtävä 2</title>
+</head>
+<body>
+    <h3>Nimi prompti</h3>
+    <p id='target'></p> <!--JS tieto ilmestyy tähän-->
+    <script>
+        'use strict';
+
+        const name = prompt('Anna nimi.');
+        document.querySelector('#target').innerHTML = 'Hello, ' + name + '!';
+    </script>
+</body>
+</html>
