@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tehtävä 4</title>
+</head>
+<body>
+    <h3>Harry potterin hattu juttu</h3>
+    <p id='target'></p>
+    <script>
+        'use strict';
+
+        const name = prompt('Anna nimi.');
+        let magic;
+        let tulos = Math.floor(Math.random() * 4);
+        if (tulos == 0) {
+            magic = 'Gryffindor';
+        }
+        else if (tulos == 1) {
+            magic = 'Slytherin';
+        }
+        else if (tulos == 2) {
+            magic = 'Hufflepuff';
+        }
+        else {
+            magic = 'Ravenclaw';
+        }
+
+        document.querySelector('#target').innerHTML = name + ', you are ' + magic + '!';
+    </script>
+</body>
+</html>

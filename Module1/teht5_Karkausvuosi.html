@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tehtävä 5</title>
+</head>
+<body>
+    <h3>Karkausvuosi</h3>
+    <p id="target"></p>
+    <script>
+        'use strict';
+
+        const year = prompt('Anna vuosiluku ja nähdään onko se karkausvuosi.');
+        let result
+        if (year % 400 == 0 || year % 4 == 0 && year % 100 != 0) {
+            result = ' is a leap year';
+            // Muista OR merkintä on "||" ja AND merkintä on "&&"
+        }
+        else {
+            result = ' is not a leap year';
+        }
+        document.querySelector('#target').innerHTML = year + result;
+    </script>
+</body>
+</html>

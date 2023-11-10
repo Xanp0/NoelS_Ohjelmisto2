@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tehtävä 7</title>
+</head>
+<body>
+    <h3>Nopan heitto prosenttit</h3> <!-- Ei valmis-->
+    <p id="target"></p>
+    <script>
+        'use strict';
+
+        const rolls = +prompt('How many dice rolls?');
+        let diceResult
+        for (let i = 0; i < rolls; i++) {
+            diceResult = Math.floor(Math.random() * 6)
+            let results = +diceResult
+        }
+
+        document.querySelector('#target').innerHTML = 'The sum of the dice rolls is ' + results;
+    </script>
+</body>
+</html>

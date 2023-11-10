@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tehtävä 10</title>
+</head>
+<body>
+    <h3>Nopan heitto prosenttit</h3>
+    <p id="tulokset"></p>
+    <script>
+        'use strict';
+
+        const dices = +prompt('Kuinka monta noppaa.');
+        const goal = +prompt('Mitä summaa tavoittelet?');
+
+        const maxTries = 10000;
+        let success = 0;
+
+        for(let i = 0; i < maxTries; i++) {
+            let tries = 0;
+            for (let nro = 0; nro < dices; nro++) {
+                tries += Math.floor(Math.random() * 6) + 1
+            }
+            if (tries == goal) {
+                success++;
+            }
+        }
+        const successRate = 100 * (success/maxTries);
+
+        let printing =
+            `Probability to get sum ${goal} with ${dices} dice is:<br>
+            ${successRate.toFixed(2)} %`;
+
+        document.querySelector('#tulokset').innerHTML = printing;
+    </script>
+</body>
+</html>
