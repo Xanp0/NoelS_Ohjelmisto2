@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tehtävä 1</title>
+</head>
+<body>
+    <h3>Lista järjestys</h3>
+    <p>New console log.</p>
+    <script>
+        'use strict';
+
+        let luvut = [];
+
+        for (let i = 0; i < 5; i++) {
+            let luku = +prompt('Anna numero.');
+            luvut.push(luku);
+        }
+
+        for (let nro = 4; nro >= 0; nro--) {
+            console.log(luvut[nro]);
+        }
+    </script>
+</body>
+</html>

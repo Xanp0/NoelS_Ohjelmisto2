@@ -18,17 +18,16 @@
         const lukuC = +prompt('Anna kolmas luku: ');
 
         const summa = lukuA + lukuB + lukuC;
-        const ka = (summa) / 3;
+        const keskiarvo = (summa) / 3;
         const tulo = lukuA * lukuB * lukuC;
 
         // käytetään muotoiltua merkkijonoa (template string) tulostusta varten
         let tulostus =
             `Lukujesi summa = ${summa} <br>
-            keskiarvo = ${ka} <br>
+            keskiarvo = ${keskiarvo} <br>
             tulo = ${tulo}`;
 
         document.querySelector('#tulokset').innerHTML = tulostus;
     </script>
-
 </body>
 </html>

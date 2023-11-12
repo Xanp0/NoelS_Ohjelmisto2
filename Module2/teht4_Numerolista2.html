@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tehtävä 4</title>
+</head>
+<body>
+    <h3>Numerot järjestys</h3>
+    <p>New console log, also teacher made the code that shows the text below.</p>
+    <div id="jstulostus"></div>
+    <script>
+        'use strict';
+
+        //opettajan tekemät lisäjutut jää tänne, että opin niistä!
+        const numerot = [];
+        let arvo = +prompt('Anna numero ja numero 0 lopettaa.');
+
+        while (arvo !== 0) {
+            numerot.push(arvo);
+            arvo = +prompt('Anna numero ja numero 0 lopettaa.');
+        }
+        numerot.sort((a,b) => a-b); //luvut pienimmästä suurimpaan
+        numerot.reverse();
+
+        for (let i = 0; i < numerot.length; i++) {
+            console.log(numerot[i]);
+        }
+
+        //opettajan extra juttuja
+        //muodostetaan html-sivulle lähetettävä merkkijono
+        let htmlKoodi = `<ul>`;
+        for (let alkio of numerot) {
+            htmlKoodi += `<li> ${alkio} </li>`;
+        }
+        htmlKoodi += `</ul>`;
+
+        const tpaikka = document.querySelector('#jstulostus');
+        tpaikka.innerHTML = htmlKoodi;
+    </script>
+</body>
+</html>

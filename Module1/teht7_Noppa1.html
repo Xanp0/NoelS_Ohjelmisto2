@@ -5,19 +5,19 @@
     <title>Tehtävä 7</title>
 </head>
 <body>
-    <h3>Nopan heitto prosenttit</h3> <!-- Ei valmis-->
+    <h3>Noppien heittoa</h3>
     <p id="target"></p>
     <script>
         'use strict';
 
         const rolls = +prompt('How many dice rolls?');
-        let diceResult
+        let diceResult = 0;
         for (let i = 0; i < rolls; i++) {
-            diceResult = Math.floor(Math.random() * 6)
-            let results = +diceResult
+            diceResult += Math.floor(Math.random() * 6) + 1;
         }
+        let results = diceResult;
 
-        document.querySelector('#target').innerHTML = 'The sum of the dice rolls is ' + results;
+        document.querySelector('#target').innerHTML = 'The sum of the ' + rolls + ' dice rolls is ' + results;
     </script>
 </body>
 </html>

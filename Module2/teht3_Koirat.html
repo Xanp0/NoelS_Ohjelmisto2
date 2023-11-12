@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tehtävä 3</title>
+</head>
+<body>
+    <h3>Koirat aakkosjärjestyksessä väärinpäin</h3>
+    <p id="target"></p>
+    <script>
+        'use strict';
+
+        const nimet = [];
+        for (let i = 0; i < 6; i++) {
+            let nimi = prompt('Anna koiran nimi.');
+            nimet.push(nimi);
+        }
+        nimet.sort()
+        nimet.reverse();
+
+        let htmlOsio = `Koirien nimet.<br>`;
+        htmlOsio += `<ul>`;
+
+        for (let koira of nimet) {
+            htmlOsio += `<li> ${koira} </li>`;
+        }
+        htmlOsio += `</ul>`;
+
+        const tpaikka = document.querySelector('#target');
+        tpaikka.innerHTML = htmlOsio;
+    </script>
+</body>
+</html>

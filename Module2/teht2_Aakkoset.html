@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tehtävä 2</title>
+</head>
+<body>
+    <h3>Osallistujat aakkosjärjestyksessä</h3>
+    <p id="tulostus"></p>
+    <script>
+        'use strict';
+
+        //opettajan tekemät jutut jää tänne, että opin niistä!
+        const nimet = [];
+        const määrä = +prompt('Kuinka monta osallistujaa?');
+
+        for (let i = 0; i < määrä; i++) {
+            let nimi = prompt('Anna osallistujan nimi.');
+            nimet.push(nimi);
+        }
+        nimet.sort();
+
+        //tulostetaan nimet järjestettyyn eli numeroituun listaan (<ol>).
+        //Aletaan muodostamaan html-sivulle tulevaa koodia
+        let htmlKoodi = `<br>`;
+        htmlKoodi += `<ol>`; //listan aloitus tag
+
+        for (let sana of nimet) {
+            htmlKoodi += `<li> ${sana} </li>`;
+        }
+        htmlKoodi += `</ol>`; //listan lopetus tag
+
+        //etsitään html-sivulta sopiva kohta tulostusta varten
+        const tpaikka = document.querySelector('#tulostus');
+        //tulostetaan edellä muodostettu html-koodi web-sivulle
+        tpaikka.innerHTML = htmlKoodi;
+    </script>
+</body>
+</html>
