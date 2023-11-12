@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tehtävä 7</title>
+</head>
+<body>
+    <h3>Nopan pitää saada maksimi määrä</h3>
+    <p id="target">Noppa heittojen silmäluvut:<br></p>
+    <script>
+        'use strict';
+
+        function heitto(maksimi) {
+            const nroTulos = Math.floor(Math.random() * maksimi) + 1;
+            return nroTulos;
+        }
+
+        let noppaMax = +prompt('Anna nopan silmäluku maksimi.');
+        const arvotutLuvut = [];
+        let silmaluku = 0;
+
+        while (silmaluku != noppaMax) {
+            silmaluku = heitto(noppaMax);
+            arvotutLuvut.push(silmaluku);
+        }
+
+        let htmlOsio = `<ul>`;
+        for (let arvo of arvotutLuvut) {
+            htmlOsio += `<li> ${arvo} </li>`;
+        }
+        htmlOsio += `</ul>`;
+
+        const tulosta = document.querySelector('#target');
+        tulosta.innerHTML += htmlOsio;
+    </script>
+</body>
+</html>

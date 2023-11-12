@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tehtävä 6</title>
+</head>
+<body>
+    <h3>Nopan pitää saada 6</h3>
+    <p id="jstulostus">Noppa heittojen silmäluvut:<br></p>
+    <script>
+        'use strict';
+
+        //opettajan tekemät jutut jää tänne, että opin niistä!
+        function heitto() {
+            const arvottu = Math.floor(Math.random() * 6) + 1;
+            return arvottu;
+        }
+
+        const arvotutLuvut = [];
+        let silmaluku = 0;
+
+        while (silmaluku != 6) {
+            silmaluku = heitto();
+            arvotutLuvut.push(silmaluku);
+        }
+
+        let htmlKoodi = `<ul>`;
+        for (let arvo of arvotutLuvut) {
+            htmlKoodi += `<li> ${arvo} </li>`;
+        }
+        htmlKoodi += `</ul>`;
+
+        const tpaikka = document.querySelector('#jstulostus');
+        tpaikka.innerHTML += htmlKoodi;
+        //tulostetaan saatu teksti html-sivulle siellä p-tagin sisällä jo
+        //olevan sisällön perään. Käytetään siis '+=' operaatiota.
+    </script>
+</body>
+</html>

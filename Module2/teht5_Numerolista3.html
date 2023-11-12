@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tehtävä 5</title>
+</head>
+<body>
+    <h3>Numero järjestys taas</h3>
+    <p>New console log, because same number was written twice.</p>
+    <script>
+        'use strict';
+
+        const numerot = [];
+        let arvo = +prompt('Anna numero.');
+        numerot.push(arvo);
+
+        let samaNumero = false
+        while (samaNumero != true) {
+            if (arvo in numerot) { //jostain syystä ei aina toimi...
+                samaNumero = true
+            }
+            else {
+                arvo = +prompt('Anna numero, jos numero on annetta aiemmin tämä loppuu.');
+                numerot.push(arvo);
+            }
+        }
+        numerot.sort();
+
+        for (let i = 0; i < numerot.length; i++) {
+            console.log(numerot[i]);
+        }
+    </script>
+</body>
+</html>
