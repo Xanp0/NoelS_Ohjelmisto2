@@ -1,4 +1,5 @@
 'use strict';
+
 const picArray = [
   {
     title: 'Title 1',
@@ -93,3 +94,41 @@ const picArray = [
 ];
 
 // add your code here
+const sectionElem = document.getElementById('pictures');
+
+// käydään jokainen kuva picArray-taulukosta yksitellen läpi,
+// ja lisätään kaikkien 9 kuvan tiedot html-sivulle
+for (let i = 0; i < picArray.length; i++) {
+  // -- tämä koodi valmistelee 1 kuvan tiedot html-sivulle --
+
+  // luodaan aluksi article-elementti (vastaa html-sivun <article> -tagia)
+  // muut elementit laitetaan tämän article-elementin sisään
+  const articleElem = document.createElement('article');
+  articleElem.className = "card";
+
+  // luodaan h2-elementti ja laitetaan se articlen sisään
+  const h2Elem = document.createElement('h2');
+  h2Elem.innerHTML = picArray[i].title;
+  articleElem.appendChild(h2Elem);      // lisätään h2Elem articleElem sisään.
+
+  // luodaan figure-elementti ja sen lapsielementit.
+  const figureElem = document.createElement('figure');
+  const imgElem = document.createElement('img');
+  imgElem.src = picArray[i].image.medium;
+  imgElem.alt = picArray[i].title;
+  const figcaptionElem = document.createElement('figcaption');
+  figcaptionElem.innerText = picArray[i].caption;
+  // lisätään äsken luodut elementit figure-elementin sisään
+  figureElem.appendChild(imgElem);
+  figureElem.appendChild(figcaptionElem);
+  // lisätään figure-elementti article-elementin sisään
+  articleElem.appendChild(figureElem);
+
+  // luodaan p-elementti ja lisätään se articlen sisään.
+  const pElem = document.createElement('p');
+  pElem.innerText = picArray[i].description;
+  articleElem.appendChild(pElem);
+
+  // -- lisätään luotu article-elentti html-sivulle --
+  sectionElem.appendChild(articleElem);
+}
