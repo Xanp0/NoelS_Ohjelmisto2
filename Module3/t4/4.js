@@ -17,9 +17,6 @@ const students = [
 
 const targetElem = document.querySelector('#target');
 
-// käydään kaikki students-taulukon alkiot läpi yksitellen.
-// html-sivulle-tulee nyt option-tageja, joita käytetään esim. valikoissa.
-// huomaa: html-sivulla ei näy opiskelijan id-arvo, vain nimi.
 for (let student of students) {
   const item = document.createElement('option');
   item.innerHTML = student.name;
